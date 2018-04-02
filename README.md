@@ -19,7 +19,7 @@ The final PID controller implementation performed as expected.
 
 - *Describe how the final hyperparameters were chosen.*
 
-I used twiddle to tune the parameters so that the car stays on the road for most of the track. I used different parameters to initialize the parameters and their errors to make sure the car does not goes off track.
+I used twiddle to tune the parameters so that the car stays on the road for most of the track. I used different values to initialize the parameters and their errors to make sure the car does not goes off track.
 I finally ran the car for 100,000 points to reach the final parameters.
 
 I also change the throttle as negatively proportional to CTE and change in CTE with the maximum equal to 0.3
