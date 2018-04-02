@@ -9,6 +9,7 @@ public:
   double total_cte;
   double best_err;
   double throttle;
+  int step_count;
 
   std::vector<double> params;
   std::vector<double > params_factor;

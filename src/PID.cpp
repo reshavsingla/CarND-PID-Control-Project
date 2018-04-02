@@ -22,8 +22,10 @@ void PID::Init(double Kp, double Ki, double Kd) {
 
     params = {Kp,Kd,Ki};
     params_factor = {0,0,0};
-    params_error = {.003,1,0.000003};
+    //params_error = {.003,1,0.000003};
+    params_error = {0,0,0};
     current_error = 0;
+    step_count = 0;
 }
 
 void PID::UpdateError(double cte) {
@@ -34,6 +36,8 @@ void PID::UpdateError(double cte) {
     Kd = Kd + learning_rate * (prev_cte - prev_prev_cte);
     prev_prev_cte = prev_cte;
      */
+
+    step_count = step_count + 1;
     int i = current_error;
     double param = params[i];
     double param_factor = params_factor[i];
@@ -70,6 +74,12 @@ void PID::UpdateError(double cte) {
     params_factor[i] = param_factor;
     params_error[i] = param_error;
 
+    /*
+    cout<<"--------------------"<<step_count<<"-----------------------"<<endl;
+    cout<<"Kp = "<<params[0]<<endl;
+    cout<<"Kd = "<<params[1]<<endl;
+    cout<<"Ki = "<<params[2]<<endl;
+    */
 }
 
 double PID::TotalError() {
