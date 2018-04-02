@@ -3,6 +3,29 @@ Self-Driving Car Engineer Nanodegree Program
 
 ---
 
+## Rubric Discussion Points
+
+- *Describe the effect each of the P, I, D components had in your implementation.*
+
+The P is the proportional component. It causes the car to steer negatively proportional to the car's distance from the lane center that is CTE - if the CTE is positive which means the car is on the right of the center lane then it steers the car towards the left and vice versa.
+
+The D is the  differential component. It causes the car to steer negatively proportional to the change in car's distance from the lane center that is the change in CTE. This component helps in counter balancing of P component behaviour and not overshoot the center lane.
+
+The I is integral component.It causes the car to negatively steer proportional to the total car's distance from the lane center that is the total CTE.  It helps in negating biases such as a steering drift.
+
+The final PID controller implementation performed as expected.
+
+[Final Parameters](https://github.com/reshavsingla/CarND-PID-Control-Project/blob/master/video/final_video_480.mov)
+
+- *Describe how the final hyperparameters were chosen.*
+
+I used twiddle to tune the parameters so that the car stays on the road for most of the track. I used different parameters to initialize the parameters and their errors to make sure the car does not goes off track.
+I finally ran the car for 100,000 points to reach the final parameters.
+
+I also change the throttle as negatively proportional to CTE and change in CTE with the maximum equal to 0.3
+
+
+
 ## Dependencies
 
 * cmake >= 3.5

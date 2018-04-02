@@ -38,7 +38,7 @@ public:
   /*
   * Calculate the total PID error.
   */
-  double TotalError();
+  void TotalError();
 };
 
 #endif /* PID_H */

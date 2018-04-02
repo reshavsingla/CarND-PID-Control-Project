@@ -82,6 +82,6 @@ void PID::UpdateError(double cte) {
     */
 }
 
-double PID::TotalError() {
+void PID::TotalError() {
 }
 
