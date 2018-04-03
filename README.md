@@ -15,7 +15,7 @@ The I is integral component.It causes the car to negatively steer proportional t
 
 The final PID controller implementation performed as expected.
 
-[Final Parameters](https://github.com/reshavsingla/CarND-PID-Control-Project/blob/master/video/final_video_480.mov)
+[Final Parameters](https://github.com/reshavsingla/CarND-PID-Control-Project/blob/master/video/final_video_480.mp4)
 
 - *Describe how the final hyperparameters were chosen.*
 
